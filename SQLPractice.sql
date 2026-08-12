@@ -139,3 +139,40 @@ SELECT TOP 3 *
 FROM Employees1
 ORDER BY Salary DESC;
 
+---Find all unique cities.
+---DISTINCT removes duplicate values.
+
+SELECT DISTINCT city
+FROM Employees1;
+
+---⭐ Find all employees whose age is greater than 28.
+
+SELECT age, name
+FROM Employees1
+WHERE age > 28;
+
+---Find the employee with the highest salary.
+
+SELECT MAX(salary) AS highestSal
+FROM Employees1;
+
+---Find all employees from the HR department whose salary is greater than ₹45,000.
+
+SELECT *
+FROM Employees1
+WHERE  department = 'HR' 
+AND salary > 45000;
+
+
+---Find the number of employees in each city.
+
+SELECT city, COUNT(*) AS empCount
+FROM Employees1
+GROUP BY city;
+
+---Find the department with the highest average salary.
+
+SELECT TOP 1  department, AVG(salary) AS empsalary
+FROM Employees1
+GROUP BY department
+ORDER BY AVG(salary) DESC;
