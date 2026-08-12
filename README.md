@@ -1,1 +1,30 @@
-# SQLPractice
+1. SELECT
+2. WHERE
+3. AND / OR / NOT
+4. IN / BETWEEN / LIKE
+5. ORDER BY
+6. DISTINCT
+7. INSERT
+8. UPDATE
+9. DELETE
+10. COUNT / SUM / AVG / MIN / MAX
+11. GROUP BY
+12. HAVING
+13. CASE
+14. NULL / IS NULL / COALESCE
+15. INNER JOIN
+16. LEFT JOIN
+17. RIGHT JOIN
+18. FULL JOIN
+19. Subqueries
+20. CTE
+21. ROW_NUMBER()
+22. RANK()
+23. DENSE_RANK()
+24. Stored Procedures
+25. Views
+26. Indexes
+27. Transactions
+28. Primary Key / Foreign Key
+29. Constraints
+30. Normalization# SQLPractice
