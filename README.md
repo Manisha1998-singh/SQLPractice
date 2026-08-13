@@ -1,3 +1,10 @@
+<details>
+<summary><a href="https://example.com/question1">What is a Primary Key?</a></summary>
+
+A Primary Key is a column (or set of columns) that uniquely identifies each row in a table. It cannot contain NULL values.
+
+</details>
+
 1. SELECT
 2. WHERE
 3. AND / OR / NOT
@@ -32,7 +39,7 @@
 
 # SQL Interview Questions & Answers
 
-> Click :star:if you like the project. Pull Request are highly appreciated. Follow me [@kansiris87](https://twitter.com/kansiris87) for technical updates.
+
 
 ### Table of Contents
 
