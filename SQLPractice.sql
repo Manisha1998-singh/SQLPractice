@@ -176,3 +176,88 @@ SELECT TOP 1  department, AVG(salary) AS empsalary
 FROM Employees1
 GROUP BY department
 ORDER BY AVG(salary) DESC;
+
+
+
+--Find employees from IT or HR:
+
+SELECT * 
+FROM Employees1
+WHERE department IN ('IT', 'HR');
+
+--Find employees who are not from IT:
+
+SELECT * 
+FROM Employees1
+WHERE department NOT IN ('IT');
+
+
+----Change an employee's salary:
+
+
+UPDATE Employees1
+SET Salary = 65000
+WHERE EmployeeID = 2;
+
+SELECT *
+FROM Employees1;
+
+
+--Delete one employee:
+
+DELETE FROM Employees1
+WHERE EmployeeID = 2;
+
+---Find the 5 highest-paid employees:
+
+SELECT TOP 5 *
+FROM Employees1
+ORDER BY Salary DESC;
+
+---Find unique departments:
+
+SELECT DISTINCT department
+FROM Employees1;
+
+---COUNT ---Total employees:
+
+SELECT COUNT(*) AS totalEmp
+FROM Employees1;
+
+--Count IT employees:
+
+SELECT COUNT(*) AS totalITEmp
+FROM Employees1
+WHERE Department = 'IT';
+
+---CASE --Create a salary category:
+SELECT 
+Name, 
+Salary,
+CASE 
+ WHEN Salary >= 70000 THEN 'High'
+ WHEN Salary  >= 50000 THEN 'Mid'
+ ELSE 'Low'
+ END AS salaryCat
+ FROM Employees1;
+
+
+ ---Find employees whose city is missing:
+
+ SELECT Name
+ FROM Employees1
+ WHERE City IS NULL;
+
+  ---COALESCE --Replace NULL values:
+ UPDATE Employees1
+SET City = NULL
+ WHERE EmployeeID = 1;
+  
+
+
+ ---COALESCE --Replace NULL values:
+ SELECT 
+ Name,
+ COALESCE(City, 'Not Available') AS City
+ FROM Employees1;
+  
