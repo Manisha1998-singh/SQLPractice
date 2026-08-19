@@ -261,3 +261,104 @@ SET City = NULL
  COALESCE(City, 'Not Available') AS City
  FROM Employees1;
   
+
+  ---Deparments
+
+ CREATE TABLE Departments
+(
+    DepartmentID INT PRIMARY KEY,
+    DepartmentName VARCHAR(45),
+    Manager VARCHAR(100)
+);
+  USE SQLPractice;
+  GO
+
+  INSERT INTO Departments (DepartmentID, DepartmentName, Manager)
+  VALUES 
+  (1, 'IT',  'Rahul'),
+  (2, 'HR',  'Priya'),
+  (3, 'Finance',  'Amit'),
+  (4, 'Sales',  'Neha');
+  GO
+  SELECT *
+FROM Departments;
+
+SELECT * 
+FROM Employees1 
+INNER JOIN Departments 
+ON Employees1.Department = Departments.DepartmentName;
+
+SELECT Employees1.Name, Employees1.Department, Departments.Manager 
+FROM Employees1 
+INNER JOIN Departments 
+ON Employees1.Department = Departments.DepartmentName;
+
+
+SELECT E.Name, E.Department, D.Manager
+From Employees1 AS E
+INNER JOIN Departments AS D
+ON E.Department = D.DepartmentName;
+
+---Find IT employees and their manager.
+
+SELECT E.Name, E.Department, E.Salary, D.Manager
+From Employees1 AS E
+INNER JOIN Departments AS D
+ON E.Department = D.DepartmentName
+WHERE E.Department = 'IT';
+
+--JOIN + ORDER BY
+---Show all employees with their managers, highest salary first.
+SELECT E.Name, E.Salary, D.Manager
+FROM Employees1 AS E
+INNER JOIN Departments AS D
+ON E.Department = D.DepartmentName
+ORDER BY E.Salary DESC;
+
+
+SELECT *
+FROM Employees1;
+
+ALTER TABLE Employees1
+ADD DepartmentID INT;
+
+
+
+
+
+UPDATE Employees1
+SET DepartmentID = 1
+WHERE Department = 'IT';
+
+UPDATE Employees1
+SET DepartmentID = 2
+WHERE Department = 'HR';
+
+UPDATE Employees1
+SET DepartmentID = 3
+WHERE Department = 'Finance';
+
+UPDATE Employees1
+SET DepartmentID = 4
+WHERE Department = 'Sales';
+
+SELECT *
+FROM Employees1;
+
+ALTER TABLE Employees1
+ADD CONSTRAINT FK_Employees_Departments
+FOREIGN KEY (DepartmentID)
+REFERENCES Departments(DepartmentID);
+
+
+
+SELECT 
+    EmployeeID,
+    Name,
+    Department,
+    DepartmentID,
+    Salary,
+    City
+FROM Employees1;
+SELECT *
+FROM Departments;
